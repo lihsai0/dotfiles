@@ -7,7 +7,7 @@ padding.y = 10
 startup_mode = "SimpleFullscreen" # macOS only, makes Alacritty start in fullscreen mode
 decorations = "none"              # Removes the window decoration (title bar, etc.)
 option_as_alt = "OnlyLeft"        # macOS only, make Option key behave as Alt
-opacity = 0.5
+opacity = 0.75
 blur = true
 
 [font]
