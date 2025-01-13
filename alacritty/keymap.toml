@@ -1,3 +1,52 @@
+# Use zellij to clear history
+[[keyboard.bindings]]
+key = "K"
+mods = "Command"
+action = "ReceiveChar"
+
+# Zellij shortcuts
+# Manage Pane
+[[keyboard.bindings]]
+key = "H"
+mods = "Command|Control"
+mode = "~Vi|~Search"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "move-pane",
+  "left",
+] }
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Command|Control"
+mode = "~Vi|~Search"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "move-pane",
+  "down",
+] }
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Command|Control"
+mode = "~Vi|~Search"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "move-pane",
+  "up",
+] }
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Command|Control"
+mode = "~Vi|~Search"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "move-pane",
+  "right",
+] }
+
+# Manage Window(Session)/Tab
 [[keyboard.bindings]]
 key = "N"
 mods = "Command"
@@ -6,57 +55,100 @@ action = "None"
 [[keyboard.bindings]]
 key = "T"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "new-tab"] }
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Command"
+command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "close-tab"] }
 
 [[keyboard.bindings]]
 key = "["
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-previous-tab",
+] }
 
 [[keyboard.bindings]]
 key = "]"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-next-tab",
+] }
 
 [[keyboard.bindings]]
 key = "1"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "1",
+] }
 
 [[keyboard.bindings]]
 key = "2"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "2",
+] }
 
 [[keyboard.bindings]]
 key = "3"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "3",
+] }
 
 [[keyboard.bindings]]
 key = "4"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "4",
+] }
 
 [[keyboard.bindings]]
 key = "5"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "5",
+] }
 
 [[keyboard.bindings]]
 key = "6"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "6",
+] }
 
 [[keyboard.bindings]]
 key = "7"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "7",
+] }
 
 [[keyboard.bindings]]
 key = "8"
 mods = "Command"
-action = "None"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "go-to-tab",
+  "8",
+] }
 
 [[keyboard.bindings]]
 key = "9"
