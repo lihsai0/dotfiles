@@ -1,0 +1,20 @@
+[user]
+  name = <your_name>
+  email = <your_email>
+  signingkey = <your_gpg_key_id>
+
+[core]
+  editor = "nvim --noplugin"
+  excludesfile = ~/.config/git/ignore_global
+
+[init]
+  defaultBranch = main
+
+[includeIf "gitdir:~/Workspaces"]
+  path = ~/Workspace/.gitconfig
+
+;[inlcudeIf "gitdir:~/Workspaces/company/"]
+;  path = ~/Workspace/company/.gitconfig
+
+;[includeIf "gitdir:~/Workspaces/individual/lihs-learning"]
+;  path = ~/Workspace/individual/lihs-learning/.gitconfig
