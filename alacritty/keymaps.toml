@@ -47,10 +47,10 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
 ] }
 
 # Manage Window(Session)/Tab
-[[keyboard.bindings]]
-key = "N"
-mods = "Command"
-action = "None"
+# [[keyboard.bindings]]
+# key = "N"
+# mods = "Command"
+# action = "None"
 
 [[keyboard.bindings]]
 key = "T"

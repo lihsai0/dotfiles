@@ -1,5 +1,5 @@
 [general]
-import = ["theme_active.toml", "keymap.toml"]
+import = ["theme_active.toml", "keymaps.toml"]
 
 [window]
 padding.x = 12
