@@ -140,7 +140,7 @@ deleted = "✘$count"
 
 [golang]
 format = "󱃲 [$symbol($version )]($style)"
-symbol = " "
+symbol = "󰟓 "
 
 [guix_shell]
 format = "via [$symbol]($style) "
