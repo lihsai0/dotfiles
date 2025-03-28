@@ -9,18 +9,18 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
   "autosave": "on_window_change",
   "base_keymap": "JetBrains",
   "buffer_font_size": 16,
-  "features": {
-    "inline_completion_provider": "copilot"
-  },
   "buffer_font_family": "FiraCode Nerd Font",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "show_whitespaces": "all",
   "telemetry": {
     "diagnostics": false,
