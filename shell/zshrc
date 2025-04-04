@@ -101,6 +101,7 @@ plugins=(
   git-lfs
   golang
   gpg-agent
+  macos
   mise
   python
   rust
