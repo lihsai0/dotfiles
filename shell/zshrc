@@ -1,5 +1,6 @@
 # Zellij Setup when Alacritty
 if [ "$TERM" = "alacritty" ] && [ "$ZED_TERM" != "true" ]; then
+  export EDITOR='nvim'
   ZELLIJ_AUTO_ATTACH=true
   ZELLIJ_AUTO_EXIT=true
   eval "$(zellij setup --generate-auto-start zsh)"
@@ -116,7 +117,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -139,6 +141,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim='nvim --clean'
+alias zrf='zellij run --floating'
 
 # GnuPG for SSH Agent Setup (Setup by oh-my-zsh plugin gpg-agent)
 # export GPG_TTY="$(tty)"

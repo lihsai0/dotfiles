@@ -1,3 +1,12 @@
+# Alias `Ctrl+-` to `Ctrl+Shift+-`
+[[keyboard.bindings]]
+key = "-"
+mods = "Control"
+# `\u001b[` (equals to `\x1b`) means escape, see https://en.wikipedia.org/wiki/ANSI_escape_code#CSIsection
+# `95` means `_`, see ASCII Table
+# `5u` means `Control`, see https://github.com/alacritty/alacritty/issues/2688#issuecomment-516613134
+chars = "\u001b[95;5u"
+
 # Use zellij to clear history
 [[keyboard.bindings]]
 key = "K"
@@ -5,6 +14,16 @@ mods = "Command"
 action = "ReceiveChar"
 
 # Zellij shortcuts
+
+# Edit Scrollback
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control|Shift"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "edit-scrollback",
+] }
+
 # Manage Pane
 [[keyboard.bindings]]
 key = "H"
@@ -48,11 +67,20 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
 
 [[keyboard.bindings]]
 key = "F"
-mods = "Command|Control"
+mods = "Command|Alt"
 mode = "~Vi|~Search"
 command = { program = "/opt/homebrew/bin/zellij", args = [
   "ac",
   "toggle-floating-panes",
+] }
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Command|Control"
+mode = "~Vi|~Search"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "toggle-fullscreen",
 ] }
 
 # Manage Window(Session)/Tab
