@@ -1,0 +1,27 @@
+theme = "active"
+
+[editor]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+max-depth = 10
+
+[keys.normal]
+"Cmd-/" = "toggle_comments"
+# change current line
+A-c = ["extend_to_line_bounds", "trim_selections", "change_selection"]
+
+[keys.insert]
+C-c = "normal_mode"
+"Cmd-/" = "toggle_comments"
+C-a = "goto_line_end_newline"
+C-e = "goto_line_end_newline"
+
+[keys.select]
+C-c = "normal_mode"
