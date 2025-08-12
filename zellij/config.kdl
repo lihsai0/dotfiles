@@ -155,7 +155,9 @@ keybinds clear-defaults=true {
         bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        // default use `Alt f`, conflicted with helix
         bind "Super Alt f" { ToggleFloatingPanes; }
+        // the following are disabled by conflicted with helix
         // bind "Alt h" { MoveFocusOrTab "left"; }
         // bind "Alt i" { MoveTab "left"; }
         // bind "Alt j" { MoveFocus "down"; }
@@ -163,6 +165,7 @@ keybinds clear-defaults=true {
         // bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         // bind "Alt o" { MoveTab "right"; }
+        // default use `Alt p`, conflicted with helix
         bind "Alt g" { TogglePaneInGroup; }
         bind "Alt Shift g" { ToggleGroupMarking; }
     }
