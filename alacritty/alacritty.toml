@@ -19,3 +19,7 @@ italic = { family = "FiraCode Nerd Font", style = "Italic" }
 
 [scrolling]
 history = 0
+
+[cursor.style]
+shape = "Block"
+blinking = "On"

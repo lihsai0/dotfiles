@@ -26,57 +26,8 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
 
 # Manage Pane
 [[keyboard.bindings]]
-key = "H"
-mods = "Command|Control"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "move-focus",
-  "left",
-] }
-
-[[keyboard.bindings]]
-key = "J"
-mods = "Command|Control"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "move-focus",
-  "down",
-] }
-
-[[keyboard.bindings]]
-key = "K"
-mods = "Command|Control"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "move-focus",
-  "up",
-] }
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Command|Control"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "move-focus",
-  "right",
-] }
-
-[[keyboard.bindings]]
-key = "F"
-mods = "Command|Alt"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "toggle-floating-panes",
-] }
-
-[[keyboard.bindings]]
-key = "F"
-mods = "Command|Control"
+key = "Escape"
+mods = "Command"
 mode = "~Vi|~Search"
 command = { program = "/opt/homebrew/bin/zellij", args = [
   "ac",
