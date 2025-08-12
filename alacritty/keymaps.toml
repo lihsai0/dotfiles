@@ -13,6 +13,16 @@ key = "K"
 mods = "Command"
 action = "ReceiveChar"
 
+# Use zellij to search history
+[[keyboard.bindings]]
+key = "F"
+mods = "Command"
+command = { program = "/opt/homebrew/bin/zellij", args = [
+  "ac",
+  "switch-mode",
+  "entersearch",
+] }
+
 # Zellij shortcuts
 
 # Edit Scrollback
