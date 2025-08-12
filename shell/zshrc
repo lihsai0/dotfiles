@@ -1,6 +1,6 @@
 # Zellij Setup when Alacritty
 if [ "$TERM" = "alacritty" ] && [ "$ZED_TERM" != "true" ]; then
-  export EDITOR='nvim'
+  export EDITOR='hx'
   ZELLIJ_AUTO_ATTACH=true
   ZELLIJ_AUTO_EXIT=true
   eval "$(zellij setup --generate-auto-start zsh)"
@@ -11,6 +11,10 @@ fi
 # Setup Rust Path
 export CARGO_HOME=$HOME/.cargo
 export PATH=$CARGO_HOME/bin:$PATH
+
+# Setup PNPM Path
+export PNPM_HOME=$HOME/.local/share/pnpm
+export PATH=$PNPM_HOME:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -121,11 +125,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='hx'
+else
+  export EDITOR='hx'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
