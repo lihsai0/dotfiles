@@ -34,16 +34,6 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
   "edit-scrollback",
 ] }
 
-# Manage Pane
-[[keyboard.bindings]]
-key = "Escape"
-mods = "Command"
-mode = "~Vi|~Search"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "toggle-fullscreen",
-] }
-
 # Manage Window(Session)/Tab
 # [[keyboard.bindings]]
 # key = "N"

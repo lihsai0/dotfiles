@@ -146,6 +146,14 @@ keybinds clear-defaults=true {
     }
     shared_among "normal" "locked" {
         bind "Super k" { Clear; }
+        bind "Super esc" { ToggleFocusFullscreen; }
+        // open a filepicker
+        bind "Super Shift o" {
+          LaunchPlugin "filepicker" {
+            floating true
+            close_on_selection true
+          };
+        }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
