@@ -4,14 +4,20 @@
   signingkey = <your_gpg_key_id>
 
 [core]
-  editor = "nvim --noplugin"
   excludesfile = ~/.config/git/ignore_global
+  pager = delta
 
 [init]
   defaultBranch = main
 
 [push]
   autoSetupRemote = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictStyle = zdiff3
 
 [includeIf "gitdir:~/Workspaces"]
   path = ~/Workspace/.gitconfig
@@ -21,3 +27,12 @@
 
 ;[includeIf "gitdir:~/Workspaces/individual/lihs-learning"]
 ;  path = ~/Workspace/individual/lihs-learning/.gitconfig
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[delta]
+  navigate = true
