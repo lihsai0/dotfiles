@@ -48,7 +48,7 @@ command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "new-tab"] }
 [[keyboard.bindings]]
 key = "W"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "close-tab"] }
+command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "close-pane"] }
 
 [[keyboard.bindings]]
 key = "["
@@ -69,74 +69,42 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
 [[keyboard.bindings]]
 key = "1"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "1",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "2"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "2",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "3"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "3",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "4"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "4",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "5"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "5",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "6"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "6",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "7"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "7",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "8"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-tab",
-  "8",
-] }
+action = "ReceiveChar"
 
 [[keyboard.bindings]]
 key = "9"

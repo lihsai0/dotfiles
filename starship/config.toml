@@ -35,7 +35,15 @@ symbol = "󰍛 "
 [shell]
 disabled = false
 format = "[$indicator]($style) "
+style = "blue bold"
 
+[custom.proxy_env]
+# disabled = true
+description = "Show proxy envs"
+command = "~/.config/starship/proxy_env.sh"
+when = "[[ $(~/.config/starship/proxy_env.sh state) -gt 0 ]]"
+format = "󰖂 [$output]($style) "
+style = "bold yellow"
 
 # The character to separate modules with.
 
