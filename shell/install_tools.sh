@@ -17,9 +17,9 @@ brew install wget aria2 # network stuff
 brew install gunpg pinentry-mac # gun stuff
 brew install zoxide bat btop eza fd ripgrep sd zellij dust # utils
 brew install neovim helix # editors
-brew install rustup mise sqlite # develop languages
+brew install gdb rustup mise sqlite lua fennel minimal-racket # develop languages
 brew install minicom arduino-cli # hardware develop
-brew install jq yq asimov ffmpeg awscli
+brew install jq jo yq asimov ffmpeg awscli # tools
 
 brew install --cask iterm2 alacritty # terminal
 brew install --cask alfred hammerspoon # launcher
@@ -30,3 +30,16 @@ brew install --cask orbstack utm # virtualization
 brew install --cask iina # media
 brew install --cask mac-mouse-fix betterdisplay shottr keycastr # tools
 brew install --cask surge wireshark-app imhex
+
+# Install Rust
+rustup install stable
+
+# Install mise packages
+mise install protoc go
+mise install deno node pnpm
+MISE_PYTHON_COMPILE=0
+MISE_PYTHON_PRECOMPILED_FLAVOR="freethreaded+pgo+lto-full"
+mise install 'python[patch_sysconfig=false]@3'
+mise install uv
+
+# Install ESP32
