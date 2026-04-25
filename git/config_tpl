@@ -20,13 +20,13 @@
   conflictStyle = zdiff3
 
 [includeIf "gitdir:~/Workspaces"]
-  path = ~/Workspace/.gitconfig
+  path = ~/Workspaces/.gitconfig
 
 ;[inlcudeIf "gitdir:~/Workspaces/company/"]
-;  path = ~/Workspace/company/.gitconfig
+;  path = ~/Workspaces/company/.gitconfig
 
 ;[includeIf "gitdir:~/Workspaces/individual/lihs-learning"]
-;  path = ~/Workspace/individual/lihs-learning/.gitconfig
+;  path = ~/Workspaces/individual/lihs-learning/.gitconfig
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
