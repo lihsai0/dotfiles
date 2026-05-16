@@ -17,22 +17,24 @@ action = "ReceiveChar"
 [[keyboard.bindings]]
 key = "F"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "switch-mode",
-  "entersearch",
-] }
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = [
+#   "ac",
+#   "switch-mode",
+#   "entersearch",
+# ] }
 
 # Zellij shortcuts
 
 # Edit Scrollback
 [[keyboard.bindings]]
-key = "Space"
-mods = "Control|Shift"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "edit-scrollback",
-] }
+key = "E"
+mods = "Command"
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = [
+#   "ac",
+#   "edit-scrollback",
+# ] }
 
 # Manage Window(Session)/Tab
 # [[keyboard.bindings]]
@@ -43,28 +45,32 @@ command = { program = "/opt/homebrew/bin/zellij", args = [
 [[keyboard.bindings]]
 key = "T"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "new-tab"] }
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "new-tab"] }
 
 [[keyboard.bindings]]
 key = "W"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "close-pane"] }
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = ["ac", "close-pane"] }
 
 [[keyboard.bindings]]
 key = "["
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-previous-tab",
-] }
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = [
+#   "ac",
+#   "go-to-previous-tab",
+# ] }
 
 [[keyboard.bindings]]
 key = "]"
 mods = "Command"
-command = { program = "/opt/homebrew/bin/zellij", args = [
-  "ac",
-  "go-to-next-tab",
-] }
+action = "ReceiveChar"
+# command = { program = "/opt/homebrew/bin/zellij", args = [
+#   "ac",
+#   "go-to-next-tab",
+# ] }
 
 [[keyboard.bindings]]
 key = "1"

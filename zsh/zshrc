@@ -165,9 +165,8 @@ alias export_esprs_env='source $HOME/export-esp.sh'
 # eval "$(~/.local/bin/mise activate zsh)"
 
 # Zellij Setup when Alacritty
-if [ "$TERM" = "alacritty" ] && [ "$ZED_TERM" != "true" ]; then
-  export EDITOR='hx'
-  ZELLIJ_AUTO_ATTACH=true
+if ([ "$TERM" = "alacritty" ] || [ "$TERM" = "xterm-ghostty" ]) && [ "$ZED_TERM" != "true" ]; then
+  # ZELLIJ_AUTO_ATTACH=false
   ZELLIJ_AUTO_EXIT=true
   eval "$(zellij setup --generate-auto-start zsh)"
 fi

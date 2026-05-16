@@ -2,6 +2,7 @@ layout {
   pane size=1 borderless=true {
     plugin location="tab-bar"
   }
+
   pane split_direction="vertical" {
     pane
     pane {
@@ -9,7 +10,26 @@ layout {
       pane
     }
   }
+
   pane size=1 borderless=true {
-      plugin location="status-bar"
+    plugin location="status-bar"
   }
+
+  // ------ Swap Layout ------
+
+  swap_tiled_layout name="portrait" {
+    tab {
+      pane size=1 borderless=true {
+        plugin location="tab-bar"
+      }
+      pane split_direction="horizontal" {
+        pane size="50%"
+        pane size="25%"
+        pane size="25%"
+      }
+      pane size=1 borderless=true {
+        plugin location="status-bar"
+      }
+    } // tab END
+  } // swap_tiled_layout END
 }

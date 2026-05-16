@@ -25,8 +25,8 @@
 ;[inlcudeIf "gitdir:~/Workspaces/company/"]
 ;  path = ~/Workspaces/company/.gitconfig
 
-;[includeIf "gitdir:~/Workspaces/individual/lihs-learning"]
-;  path = ~/Workspaces/individual/lihs-learning/.gitconfig
+;[includeIf "gitdir:~/Workspaces/indie/lihs-learning"]
+;  path = ~/Workspaces/indie/lihs-learning/.gitconfig
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

@@ -1,0 +1,112 @@
+# -- Window --
+window-padding-x = 12
+window-padding-y = 10
+window-decoration = false
+fullscreen = non-native-visible-menu
+background-opacity = 0.75
+background-blur = true
+
+# -- Theme --
+window-theme = system
+theme = dark:Gruvbox Material Dark,light:Gruvbox Material Light
+
+# -- Font --
+font-size = 14
+font-family = "Maple Mono NF"
+font-family-bold = "Maple Mono NF"
+font-family-italic = "Maple Mono NF"
+font-family-bold-italic = "Maple Mono NF"
+
+# -- Scrollback --
+scrollback-limit = 0
+
+# -- Cursor --
+cursor-style = block
+cursor-style-blink = true
+
+# ============================================================
+# Keybindings
+# ============================================================
+
+# -- Zellij-managed keys --
+
+# clear buffer
+keybind = super+k=unbind
+
+# edit scrollback
+keybind = ctrl+e=unbind
+
+# find
+keybind = super+f=unbind
+
+# close pane
+keybind = super+w=unbind
+
+# swap prev layout
+keybind = super+bracket_left=unbind
+
+# swap next layout
+keybind = super+bracket_right=unbind
+
+# move focus
+keybind = alt+arrow_up=unbind
+keybind = alt+arrow_down=unbind
+keybind = alt+arrow_left=unbind
+keybind = alt+arrow_right=unbind
+
+# Disable All Ghostty Tab
+# new tab
+keybind = super+t=unbind
+# close tab
+keybind = super+shift+w=unbind
+
+# focus tab
+keybind = super+shift+bracket_left=unbind
+keybind = super+shift+bracket_right=unbind
+keybind = ctrl+shift+tab=unbind
+keybind = super+1=unbind
+keybind = super+2=unbind
+keybind = super+3=unbind
+keybind = super+4=unbind
+keybind = super+5=unbind
+keybind = super+6=unbind
+keybind = super+7=unbind
+keybind = super+8=unbind
+keybind = super+9=unbind
+keybind = super+digit_1=unbind
+keybind = super+digit_2=unbind
+keybind = super+digit_3=unbind
+keybind = super+digit_4=unbind
+keybind = super+digit_5=unbind
+keybind = super+digit_6=unbind
+keybind = super+digit_7=unbind
+keybind = super+digit_8=unbind
+keybind = super+digit_9=unbind
+
+# Disable All Ghostty Split
+# new split
+keybind = super+d=unbind
+keybind = super+shift+d=unbind
+
+# focus split
+keybind = super+alt+arrow_up=unbind
+keybind = super+alt+arrow_down=unbind
+keybind = super+alt+arrow_left=unbind
+keybind = super+alt+arrow_right=unbind
+
+# toggle split zoom
+keybind = super+shift+enter=unbind
+
+# resize split
+keybind = super+ctrl+arrow_up=unbind
+keybind = super+ctrl+arrow_down=unbind
+keybind = super+ctrl+arrow_left=unbind
+keybind = super+ctrl+arrow_right=unbind
+keybind = super+ctrl+equal=unbind
+
+# ============================================================
+# macOS
+# ============================================================
+
+# -- macOS: Option as Alt (left only) --
+macos-option-as-alt = left
