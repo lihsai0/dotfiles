@@ -1,7 +1,4 @@
-#!/bin/sh
-
-# !!!!!!!!!! WORKING IN PROGRESS !!!!!!!!!!
-# Copy and Paste to Run Manually
+#!/bin/bash
 
 # ====================
 # Install Oh My Zsh
@@ -13,4 +10,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Install omz plugin
 # zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# zsh-completions
+git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+
+# Install functions
+# y -> yazi
+ln -s $(realpath ./functions/yazi.zsh) ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/yazi.zsh

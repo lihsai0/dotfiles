@@ -1,3 +1,4 @@
-inherits = "gruvbox"
+# use the terminal's ANSI color palette
+inherits = "base16_terminal"
 
 "ui.background" = {}

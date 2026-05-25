@@ -115,7 +115,12 @@ plugins=(
   uv
   zoxide
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
+
+# zsh-completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -164,9 +169,22 @@ alias export_esprs_env='source $HOME/export-esp.sh'
 # Mise Setup (Setup by oh-my-zsh plugin mise)
 # eval "$(~/.local/bin/mise activate zsh)"
 
-# Zellij Setup when Alacritty
+# Zellij Setup when Alacritty or Ghostty
 if ([ "$TERM" = "alacritty" ] || [ "$TERM" = "xterm-ghostty" ]) && [ "$ZED_TERM" != "true" ]; then
   # ZELLIJ_AUTO_ATTACH=false
   ZELLIJ_AUTO_EXIT=true
-  eval "$(zellij setup --generate-auto-start zsh)"
+  ZELLIJ_DATA_DIR=$HOME/.config/zellij
+
+  # eval "$(zellij setup --generate-auto-start zsh)"
+  if [[ -z "$ZELLIJ" ]]; then
+      if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+          zellij --data-dir "$ZELLIJ_DATA_DIR" attach -c
+      else
+          zellij --data-dir "$ZELLIJ_DATA_DIR"
+      fi
+
+      if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+          exit
+      fi
+  fi
 fi
