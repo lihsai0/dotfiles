@@ -169,6 +169,9 @@ alias export_esprs_env='source $HOME/export-esp.sh'
 # Mise Setup (Setup by oh-my-zsh plugin mise)
 # eval "$(~/.local/bin/mise activate zsh)"
 
+# Mole Setup
+eval "$(mole completion zsh)"
+
 # Zellij Setup when Alacritty or Ghostty
 if ([ "$TERM" = "alacritty" ] || [ "$TERM" = "xterm-ghostty" ]) && [ "$ZED_TERM" != "true" ]; then
   # ZELLIJ_AUTO_ATTACH=false

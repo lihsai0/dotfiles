@@ -12,20 +12,21 @@
 brew install git git-lfs git-delta gh gitui # git stuff
 brew install wget aria2 # network stuff
 brew install gunpg pinentry-mac # gun stuff
-brew install zsh zellij starship zoxide bat btop eza fd ripgrep sd dust # utils
+brew install zsh zellij starship zoxide bat btop eza fd ripgrep sd dust mole yazi # utils
 brew install neovim helix # editors
-brew install gdb rustup mise sqlite lua fennel minimal-racket # develop languages
+brew install rustup lua fennel minimal-racket # programming languages
+brew install sqlite mise gdb exercism # programming tools
 brew install minicom arduino-cli # hardware develop
-brew install jq jo yq asimov ffmpeg awscli # tools
+brew install jq jo yq asimov ffmpeg # tools
 
-brew install --cask iterm2 alacritty # terminal
+brew install --cask alacritty ghostty # terminal
 brew install --cask alfred hammerspoon # launcher
 brew install --cask appcleaner # cleaner
-brew install --cask zed mactex # editors
+brew install --cask zed gram mactex # editors
 brew install --cask font-lxgw-wenkai font-maple-mono-nf # fonts
 brew install --cask orbstack utm # virtualization
 brew install --cask iina # media
-brew install --cask mac-mouse-fix betterdisplay shottr keycastr # tools
+brew install --cask mac-mouse-fix betterdisplay shottr keycastr sf-symbols # tools
 brew install --cask surge wireshark-app imhex
 
 # ====================
