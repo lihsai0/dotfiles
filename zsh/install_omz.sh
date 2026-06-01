@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ====================
 # Install Oh My Zsh
@@ -17,7 +17,3 @@ git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTO
 
 # zsh-completions
 git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-
-# Install functions
-# y -> yazi
-ln -s $(realpath ./functions/yazi.zsh) ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/yazi.zsh
