@@ -43,6 +43,7 @@ btop|base|brew|系统资源监控
 eza|base|brew|ls 增强版
 fd|base|brew|find 增强版
 ripgrep|base|brew|grep 增强版
+fzf|base|brew|模糊查找器
 sd|base|brew|查找替换工具
 dust|base|brew|磁盘占用分析
 mole|base|brew|内网穿透隧道
@@ -231,7 +232,7 @@ EOF
 }
 
 # Rust 工具链初始化（选中 rustup 时触发，有 y/N 确认）
-# 注意: mise 只安装本体，不捆绑语言——语言用 mise install <name> 按需安装
+# 注意: mise 本体经 brew 安装；语言/工具链栈由 post_mise_steps 可选初始化
 post_dev_steps() {
     printf '\n将执行以下初始化步骤:\n'
     printf '  rustup install stable\n'
@@ -246,6 +247,35 @@ post_dev_steps() {
     if command -v rustup >/dev/null 2>&1; then
         rustup install stable
     fi
+}
+
+# mise 语言/工具链初始化（选中 mise 时触发，有 y/N 确认）
+# 这组工具对应 zshrc 的 buf/golang/pnpm/python/uv 插件守卫
+post_mise_steps() {
+    printf '\n将执行以下 mise 初始化步骤:\n'
+    printf '  mise install go buf protoc protoc-gen-go protoc-gen-go-grpc\n'
+    printf '  mise install node pnpm\n'
+    printf "  MISE_PYTHON_COMPILE=0 MISE_PYTHON_PRECOMPILED_FLAVOR='freethreaded+pgo+lto-full' mise install 'python[patch_sysconfig=false]@3'\n"
+    printf '  mise install uv\n'
+    printf '  mise sync python --uv\n'
+    if [ "$DRY_RUN" -eq 1 ]; then
+        printf '[dry-run] 跳过执行\n'
+        return
+    fi
+    printf '继续? [y/N] '
+    read -r ok
+    [ "$ok" = "y" ] || [ "$ok" = "Y" ] || return 0
+    # 命令存在性防御: 选中但 brew 安装未生效时跳过而非报错
+    command -v mise >/dev/null 2>&1 || {
+        printf '未检测到 mise，跳过\n' >&2
+        return 0
+    }
+    mise install go buf protoc protoc-gen-go protoc-gen-go-grpc
+    mise install node pnpm
+    MISE_PYTHON_COMPILE=0 MISE_PYTHON_PRECOMPILED_FLAVOR='freethreaded+pgo+lto-full' \
+        mise install 'python[patch_sysconfig=false]@3'
+    mise install uv
+    mise sync python --uv
 }
 
 # ============================================================
@@ -320,6 +350,11 @@ install_entries
 # 选中 rustup 时追加工具链初始化（有 y/N 确认）
 if printf '%s\n' "$SELECTED" | grep -q '^rustup|'; then
     post_dev_steps
+fi
+
+# 选中 mise 时追加语言/工具链初始化（有 y/N 确认）
+if printf '%s\n' "$SELECTED" | grep -q '^mise|'; then
+    post_mise_steps
 fi
 
 printf '\n完成。\n'
