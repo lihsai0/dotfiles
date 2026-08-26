@@ -29,8 +29,8 @@ LINK_MAP=(
   "btop|btop|$HOME/.config/btop"
   "helix|helix|$HOME/.config/helix"
   "zed|zed|$HOME/.config/zed"
-  # 个人多身份 git 配置，仅在 ~/Workspaces 存在时链接
-  "git|git/config_workspaces|$HOME/Workspaces/.gitconfig|exist"
+  # 个人多身份 git 配置（暂不启用）: 仓库中备好配置文件后按此模板添加
+  # "git|git/config_<dir>|$HOME/<dir>/.gitconfig|exist"
   # 按需启用，取消注释即可
   # "nvim|nvim|$HOME/.config/nvim"
   # "hammerspoon|hammerspoon|$HOME/.hammerspoon"

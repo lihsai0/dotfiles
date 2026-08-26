@@ -20,11 +20,11 @@
 [merge]
     conflictStyle = zdiff3
 
-# 个人多身份配置: ~/Workspaces 存在且已链接 config_workspaces 时生效
-[includeIf "gitdir:~/Workspaces"]
-    path = ~/Workspaces/.gitconfig
-;[includeIf "gitdir:~/Workspaces/company/"]
-;    path = ~/Workspaces/company/.gitconfig
+# 个人多身份配置（暂不启用）: 将 <dir> 替换为实际目录后取消注释
+;[includeIf "gitdir:<dir>"]
+;    path = <dir>/.gitconfig
+;[includeIf "gitdir:<dir>/<sub>"]
+;    path = <dir>/<sub>/.gitconfig
 
 [filter "lfs"]
     clean = git-lfs clean -- %f

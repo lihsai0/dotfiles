@@ -88,7 +88,7 @@ zshrc 是唯一入口——它既加载 shell 插件，也 export 了 `STARSHIP_
 | 仓库文件 | 链接到 | 工具如何找到它 |
 |---|---|---|
 | `zsh/zshrc` | `~/.zshrc` | zsh 启动固定读取 |
-| `git/config` | `~/.config/git/config` | git 内置的 XDG 查找路径；再 `[include]` 链 `config.local`（身份）和 `includeIf` 链 Workspaces |
+| `git/config` | `~/.config/git/config` | git 内置的 XDG 查找路径；再 `[include]` 链 `config.local`（身份）；`includeIf` 多身份为预留占位，未启用 |
 | `starship/`、`zellij/`、`btop/`、`helix/`、`alacritty/`、`zed/` | `~/.config/<tool>` | 各自的 XDG 默认路径 |
 | `ghostty/` | `~/.config/ghostty` | 目录级链接；目录内 `config` 软链到 `config.ghostty`（ghostty 只认 `config` 文件名，相对链接保证跨机器有效） |
 | `zsh/omz-plugins/*` | `$ZSH_CUSTOM/plugins/*` | OMZ 从 custom 目录发现插件 |
