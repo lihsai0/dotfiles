@@ -44,6 +44,7 @@ eza|base|brew|ls 增强版
 fd|base|brew|find 增强版
 ripgrep|base|brew|grep 增强版
 fzf|base|brew|模糊查找器
+skim|base|brew|模糊查找器（Rust 实现，fzf 备选）
 sd|base|brew|查找替换工具
 dust|base|brew|磁盘占用分析
 mole|base|brew|内网穿透隧道

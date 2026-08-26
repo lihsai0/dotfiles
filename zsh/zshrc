@@ -112,6 +112,7 @@ plugins=(
 (( $+commands[eza]      )) && plugins+=(eza)
 (( $+commands[exercism] )) && plugins+=(exercism)
 (( $+commands[fzf]      )) && plugins+=(fzf)
+(( $+commands[sk]       )) && plugins+=(skim)
 (( $+commands[gh]       )) && plugins+=(gh)
 (( $+commands[git-lfs]  )) && plugins+=(git-lfs)
 (( $+commands[go]       )) && plugins+=(golang)
