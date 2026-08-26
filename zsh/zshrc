@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# PATH 去重: 嵌套 shell（zellij 等）继承父 PATH 再 prepend 会产生重复条目
+typeset -U path PATH
 # Setup Rust Path
 export CARGO_HOME=$HOME/.cargo
 export PATH=$CARGO_HOME/bin:$PATH
@@ -105,7 +107,6 @@ plugins=(
 )
 
 # 可选: 检测到对应命令时自动启用
-(( $+commands[aws]      )) && plugins+=(aws)
 (( $+commands[buf]      )) && plugins+=(buf)
 (( $+commands[docker]   )) && plugins+=(docker docker-compose)
 (( $+commands[eza]      )) && plugins+=(eza)
