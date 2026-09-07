@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
-ln -sf $(pwd)/dotfiles/zsh/zshrc /Users/lihs/.zshrc
-ln -sf {"$(pwd)/zsh/omz-plugins","${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"}/pnpm
-ln -sf {"$(pwd)zsh/functions","${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"}/yazi.zsh
+read -p "Use ZSH(z, default) or Fish(f)? " -n 1 -r
+echo
+case ${REPLY:-z} in
+  [Ff])
+    ln -sf {"$(pwd)","$HOME/.config"}/fish
+    ;;
+  [Zz])
+    ln -sf $(pwd)/dotfiles/zsh/zshrc $HOME/.zshrc
+    ln -sf {"$(pwd)/zsh/omz-plugins","${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"}/pnpm
+    ln -sf {"$(pwd)zsh/functions","${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"}/yazi.zsh
+    ;;
+esac
 
 ln -sf $(pwd)/git/config_workspaces $HOME/Workspaces/.gitconfig
 ln -sf {"$(pwd)","$HOME/.config"}/git

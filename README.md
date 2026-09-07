@@ -10,6 +10,9 @@ cat homebrew/install_tools.sh
 # install Oh My ZSH
 ./zsh/install_omz.sh
 
+# Or use Fish
+brew install fish
+
 # link configs
 ./docs/install/ln_files.sh
 ```
