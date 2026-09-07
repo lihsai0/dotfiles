@@ -8,9 +8,10 @@ omz reload
 
 ## FAQ
 
-Q: How to update the update script?
+Q: How to update the completion script?
 
 A: Just run this:
+
 ```shell
 rm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pnpm/pnpm_completion.zsh
 omz reload
