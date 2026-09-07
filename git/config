@@ -1,0 +1,39 @@
+# 通用 git 配置（入库，软链后立即生效）
+# 个人身份信息在 config.local（不入库）: cp config_local_tpl config.local 后填写
+
+[include]
+    path = ~/.config/git/config.local
+
+[core]
+    excludesfile = ~/.config/git/ignore_global
+    pager = delta
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictStyle = zdiff3
+
+# 个人多身份配置（暂不启用）: 将 <dir> 替换为实际目录后取消注释
+;[includeIf "gitdir:<dir>"]
+;    path = <dir>/.gitconfig
+;[includeIf "gitdir:<dir>/<sub>"]
+;    path = <dir>/<sub>/.gitconfig
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[delta]
+    navigate = true
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/

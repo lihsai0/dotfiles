@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# PATH 去重: 嵌套 shell（zellij 等）继承父 PATH 再 prepend 会产生重复条目
+typeset -U path PATH
 # Setup Rust Path
 export CARGO_HOME=$HOME/.cargo
 export PATH=$CARGO_HOME/bin:$PATH
@@ -9,8 +11,10 @@ export PNPM_HOME=$HOME/.local/share/pnpm
 export PATH=$PNPM_HOME:$PATH
 
 # Setup SQLite Path
-export SQLITE_HOME=$(brew --prefix)/opt/sqlite3
-export PATH=$SQLITE_HOME/bin:$PATH
+if (( $+commands[brew] )); then
+  export SQLITE_HOME=$(brew --prefix)/opt/sqlite3
+  export PATH=$SQLITE_HOME/bin:$PATH
+fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -90,33 +94,43 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+#
+# 策略: 基础插件始终加载；其余插件全清单入仓，
+#       检测到对应命令时自动启用（装了什么工具就激活什么插件）
 plugins=(
-  aws
-  buf
-  docker
-  docker-compose
-  dotenv
-  exercism
-  eza
-  fzf
-  gh
+  # 基础: 无外部命令依赖
   git
-  git-lfs
-  golang
-  gpg-agent
   macos
-  mise
-  pnpm
-  python
-  rust
-  starship
-  uv
-  zoxide
-  zsh-syntax-highlighting
+  dotenv
+  # 基础: 外部插件（由 install_omz.sh 安装）
   zsh-autosuggestions
 )
+
+# 可选: 检测到对应命令时自动启用
+(( $+commands[buf]      )) && plugins+=(buf)
+(( $+commands[docker]   )) && plugins+=(docker docker-compose)
+(( $+commands[eza]      )) && plugins+=(eza)
+(( $+commands[exercism] )) && plugins+=(exercism)
+(( $+commands[fzf]      )) && plugins+=(fzf)
+(( $+commands[sk]       )) && plugins+=(skim)
+(( $+commands[gh]       )) && plugins+=(gh)
+(( $+commands[git-lfs]  )) && plugins+=(git-lfs)
+(( $+commands[go]       )) && plugins+=(golang)
+(( $+commands[gpgconf]  )) && plugins+=(gpg-agent)
+(( $+commands[mise]     )) && plugins+=(mise)
+(( $+commands[pnpm]     )) && plugins+=(pnpm)
+(( $+commands[python3]  )) && plugins+=(python)
+(( $+commands[rustc]    )) && plugins+=(rust)
+(( $+commands[starship] )) && plugins+=(starship)
+(( $+commands[uv]       )) && plugins+=(uv)
+(( $+commands[zoxide]   )) && plugins+=(zoxide)
+
+# 本地扩展（不入库）: 个人别名、机器特定配置
+# 例: plugins+=(docker golang); alias xx='yy'
+[[ -f $ZSH_CUSTOM/local.zsh ]] && source $ZSH_CUSTOM/local.zsh
+
+# zsh-syntax-highlighting 必须最后加载，否则高亮会被后续插件的 widget 覆盖
+plugins+=(zsh-syntax-highlighting)
 
 # zsh-completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -170,7 +184,7 @@ alias export_esprs_env='source $HOME/export-esp.sh'
 # eval "$(~/.local/bin/mise activate zsh)"
 
 # Mole Setup
-eval "$(mole completion zsh)"
+(( $+commands[mole] )) && eval "$(mole completion zsh)"
 
 # Zellij Setup when Alacritty or Ghostty
 if ([ "$TERM" = "alacritty" ] || [ "$TERM" = "xterm-ghostty" ]) && [ "$ZED_TERM" != "true" ]; then

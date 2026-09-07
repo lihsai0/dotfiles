@@ -1,0 +1,9 @@
+# 个人身份信息模板（入库，勿填真实值）
+# 使用: cp config_local_tpl config.local，在 config.local 中填写真实值
+# 完成后由 git/config 的 [include] 自动加载
+# signingkey 可选（仅提交签名需要），没有 GPG/SSH key 就保持注释或删除
+
+[user]
+    name = <your_name>
+    email = <your_email>
+    # signingkey = <your_gpg_key_id>

@@ -1,0 +1,26 @@
+# profile 示例：一行一个工具名（须在 install_tools.sh 清单内）
+# 用法: ./install_tools.sh -p example
+# 复制本文件为 work.list / personal.list 等，按机器用途裁剪
+
+# --- CLI 基础 ---
+git
+git-delta
+gh
+ripgrep
+fd
+bat
+eza
+zoxide
+starship
+zellij
+neovim
+helix
+
+# --- 开发 ---
+# 注意: uv 由 mise 安装（dev 组后置步骤），不是 brew 包
+mise
+
+# --- GUI ---
+ghostty
+zed
+iina
