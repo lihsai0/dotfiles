@@ -11,18 +11,7 @@
       // Toogle Zoom using `cmd-esc` instead of `shift-esc`
       "shift-escape": null,
       "cmd-escape": "workspace::ToggleZoom",
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "shift shift": null,
-    },
-  },
-  {
-    "context": "os == macos && Workspace",
-    "bindings": {
-      "cmd-k": null,
+      "cmd-o": "file_finder::Toggle",
     },
   },
   {
@@ -32,6 +21,13 @@
       "ctrl-w l": "workspace::ActivatePaneRight",
       "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-p": null,
+      "cmd-p": "command_palette::Toggle",
     },
   },
   {
@@ -65,14 +61,8 @@
     "context": "vim_mode == insert && Editor",
     "bindings": {
       // Switch to normal mode when saving
-      // "cmd-s": ["workspace::SendKeystrokes", "escape : w enter"],
+      "cmd-s": ["workspace::SendKeystrokes", "escape : w enter"],
       "ctrl-e": ["editor::MoveToEndOfLine", { "stop_at_soft_wraps": false }],
-    },
-  },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "shift shift": "command_palette::Toggle",
     },
   },
 ]

@@ -1,0 +1,26 @@
+[language-server.emmet-language-server]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "markdown"
+scope = "source.md"
+soft-wrap.enable = true
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-language-server", "superhtml"]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "emmet-language-server"]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "emmet-language-server"]
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "emmet-language-server"]
