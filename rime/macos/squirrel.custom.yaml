@@ -1,0 +1,73 @@
+patch:
+  style/+:
+    color_scheme: macos_light
+    color_scheme_dark: macos_dark
+    candidate_list_layout: linear # stacked | linear
+    text_orientation: horizontal # horizontal | vertical
+    candidate_format: " [label] [candidate]\u200a[comment] " # \u200a 是一个最窄空格
+    font_face: "Maple Mono NF, LXGW WenKai, PingFang SC"
+    font_point: 16
+    label_font_face: "LXGW WenKai"
+    label_font_point: 10
+    comment_font_face: "Maple Mono NF, LXGW WenKai, PingFang SC"
+    comment_font_point: 14
+
+  preset_color_schemes:
+    # 颜色格式为 `AABBGGRR`
+    # 详情见 https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/鼠鬚管介面配置指南.md
+
+    macos_light:
+      name: macOS Light
+      author: lihsai0 <https://github.com/lihsai0/dotfiles>
+      # 主色调
+      back_color: "0xC6FAFAFA"
+      translucency: true
+      # 边框
+      border_height: -3
+      border_width: -3
+      border_color: "0xE6ABABAB"
+      # 输入码
+      inline_preedit: true
+      # preedit_back_color: "0x00000000"
+      text_color: "0xE1E1E1"
+      # hilited_back_color: "0x00000000"
+      hilited_text_color: "0xFFFFFF"
+      # 候选词
+      hilited_corner_radius: 6
+      candidate_back_color: "0x00000000"
+      candidate_text_color: "0x262626"
+      label_color: "0x7D7D7D"
+      comment_text_color: "0x7D7D7D"
+      hilited_candidate_back_color: "0xC6FF7A00"
+      hilited_candidate_text_color: "0xFFFFFF"
+      hilited_candidate_label_color: "0xFFFFFF"
+      hilited_comment_text_color: "0xEEEEEE"
+
+    macos_dark:
+      name: macOS Dark
+      author: lihsai0 <https://github.com/lihsai0/dotfiles>
+      color_space: srgb
+      # 主色调
+      back_color: "0xC6232323"
+      translucency: true
+      # 边框
+      border_height: -4
+      border_width: -4
+      border_color: "0xE6575757"
+      # 输入码
+      inline_preedit: true
+      # preedit_back_color: "0x00000000"
+      text_color: "0xE1E1E1"
+      # hilited_back_color: "0x00000000"
+      hilited_text_color: "0xFFFFFF"
+      # 候选词
+      hilited_corner_radius: 8
+      candidate_back_color: "0x00000000"
+      candidate_text_color: "0xE1E1E1"
+      shadow_size: 2
+      label_color: "0xA3A3A3"
+      comment_text_color: "0xA3A3A3"
+      hilited_candidate_back_color: "0xC6FF7A00"
+      hilited_candidate_text_color: "0xFFFFFF"
+      hilited_candidate_label_color: "0xFFFFFF"
+      hilited_comment_text_color: "0xEEEEEE"
