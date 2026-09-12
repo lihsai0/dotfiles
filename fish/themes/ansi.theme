@@ -1,0 +1,132 @@
+# name: ansi
+# use the terminal's ANSI color palette
+
+# references:
+# https://fishshell.com/docs/current/cmds/fish_config.html#theme-files
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting
+
+[light]
+fish_color_normal normal
+fish_color_command blue --bold
+fish_color_builtin magenta --bold
+fish_color_function cyan --bold
+fish_color_keyword magenta --bold
+fish_color_quote green
+fish_color_redirection magenta
+fish_color_end bryellow
+fish_color_error red --bold --underline
+fish_color_param normal
+fish_color_valid_path cyan --underline
+fish_color_option brmagenta
+fish_color_comment brblack --italics
+fish_color_selection --reverse --background=bryellow
+fish_color_operator magenta
+fish_color_escape brred
+fish_color_autosuggestion brblack --dim
+fish_color_cwd blue --bold
+fish_color_cwd_root red --bold
+fish_color_user green --bold
+fish_color_host cyan
+fish_color_host_remote brmagenta
+fish_color_status red --bold
+fish_color_cancel red --reverse
+fish_color_search_match --background=bryellow
+fish_color_history_current --reverse
+
+fish_pager_color_progress bryellow
+fish_pager_color_background --reset
+fish_pager_color_prefix white --bold --underline
+fish_pager_color_completion white
+fish_pager_color_description bryellow
+fish_pager_color_selected_background --reverse
+fish_pager_color_selected_prefix
+fish_pager_color_selected_completion
+fish_pager_color_selected_description
+fish_pager_color_secondary_background --reset
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+
+[dark]
+fish_color_normal normal
+fish_color_command brblue --bold
+fish_color_builtin brmagenta --bold
+fish_color_function brcyan --bold
+fish_color_keyword brmagenta --bold
+fish_color_quote brgreen
+fish_color_redirection brmagenta
+fish_color_end bryellow
+fish_color_error brred --bold --underline
+fish_color_param normal
+fish_color_valid_path brcyan --underline
+fish_color_option brmagenta
+fish_color_comment brblack --italics
+fish_color_selection --reverse --background=brblue
+fish_color_operator brmagenta
+fish_color_escape brred
+fish_color_autosuggestion brblack
+fish_color_cwd brblue --bold
+fish_color_cwd_root brred --bold
+fish_color_user brgreen --bold
+fish_color_host brcyan
+fish_color_host_remote brmagenta
+fish_color_status brred --bold
+fish_color_cancel brred --reverse
+fish_color_search_match --background=brblue
+fish_color_history_current --reverse
+
+fish_pager_color_progress bryellow
+fish_pager_color_background --reset
+fish_pager_color_prefix brwhite --bold
+fish_pager_color_completion brwhite
+fish_pager_color_description bryellow
+fish_pager_color_selected_background --reverse
+fish_pager_color_selected_prefix
+fish_pager_color_selected_completion
+fish_pager_color_selected_description
+fish_pager_color_secondary_background --reset
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+
+[unknown]
+fish_color_normal --reset
+fish_color_command --reset
+fish_color_builtin --reset
+fish_color_function --reset
+fish_color_keyword --reset
+fish_color_quote --reset
+fish_color_redirection --reset
+fish_color_end --reset
+fish_color_error red --bold
+fish_color_param --reset
+fish_color_valid_path --reset --underline
+fish_color_option --reset
+fish_color_comment brblack --dim
+fish_color_selection --reverse
+fish_color_operator --reset
+fish_color_escape --reset
+fish_color_autosuggestion brblack --dim
+fish_color_cwd --reset --bold
+fish_color_cwd_root red --bold
+fish_color_user green --bold
+fish_color_host cyan
+fish_color_host_remote magenta
+fish_color_status red --bold
+fish_color_cancel --reverse
+fish_color_search_match --background=brblack
+fish_color_history_current --reverse
+
+fish_pager_color_progress bryellow
+fish_pager_color_background --reset
+fish_pager_color_prefix --reset --bold --underline
+fish_pager_color_completion --reset
+fish_pager_color_description yellow --dim
+fish_pager_color_selected_background --reverse
+fish_pager_color_selected_prefix
+fish_pager_color_selected_completion
+fish_pager_color_selected_description
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description

@@ -25,7 +25,11 @@ if not command -q $mise_bin
 end
 
 if not set -q MISE_SHELL
-    $mise_bin activate fish | source
+    if status is-interactive
+        $mise_bin activate fish | source
+    else
+        $mise_bin activate fish --shims | source
+    end
 end
 
 if not test -f $__fish_config_dir/completions/mise.fish
