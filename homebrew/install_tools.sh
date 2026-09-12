@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # !!!!!!!!!! WORKING IN PROGRESS !!!!!!!!!!
 # Copy and Paste to Run Manually
@@ -14,7 +14,7 @@ brew install wget aria2 # network stuff
 brew install gunpg pinentry-mac # gun stuff
 brew install zsh zellij starship zoxide bat btop eza fd ripgrep sd dust mole yazi # utils
 brew install neovim helix # editors
-brew install rustup lua fennel minimal-racket # programming languages
+brew install fennel fennel-ls luarocks # programming languages that mise not support
 brew install sqlite mise gdb exercism # programming tools
 brew install minicom arduino-cli # hardware develop
 brew install jq jo yq asimov ffmpeg # tools
@@ -27,25 +27,4 @@ brew install --cask font-lxgw-wenkai font-maple-mono-nf # fonts
 brew install --cask orbstack utm # virtualization
 brew install --cask iina # media
 brew install --cask mac-mouse-fix betterdisplay shottr keycastr sf-symbols # tools
-brew install --cask surge wireshark-app imhex
-
-# ====================
-# Install Rust
-# ====================
-rustup install stable
-
-# ====================
-# Install mise packages
-# ====================
-# Install Go Stack
-mise install go buf protoc protoc-gen-go protoc-gen-go-grpc
-
-# Install Node.js Stack
-mise install node pnpm
-
-# Install Python Stack
-MISE_PYTHON_COMPILE=0
-MISE_PYTHON_PRECOMPILED_FLAVOR="freethreaded+pgo+lto-full"
-mise install 'python[patch_sysconfig=false]@3'
-mise install uv
-mise sync python --uv
+brew install --cask wireshark-app imhex

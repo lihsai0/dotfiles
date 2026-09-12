@@ -36,5 +36,4 @@ Or, delete all links then re-link them:
 
 ```sh
 ./docs/install/rm_links.sh
-
 ```
