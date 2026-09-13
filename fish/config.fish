@@ -10,7 +10,11 @@ if status is-interactive
     abbr -a zrf 'zellij run --floating'
 
     # Zellij Setup when Alacritty or Ghostty
-    if contains -- $TERM alacritty xterm-ghostty; and test "$ZED_TERM" != true
+    if contains -- $TERM alacritty xterm-ghostty
+        # fix Zellij run unexpected in zed
+        and isatty stdin
+        and isatty stdout
+        and test "$ZED_TERM" != true
         set ZELLIJ_AUTO_ATTACH false
         set ZELLIJ_AUTO_EXIT true
         set ZELLIJ_DATA_DIR $HOME/.config/zellij

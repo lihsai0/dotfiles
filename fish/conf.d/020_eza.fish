@@ -48,6 +48,9 @@ set -g __eza_short_opts
 set -g __eza_long_opts
 
 function __eza_init
+    set -a __eza_long_opts --group-directories-first
+
+    # configurable options
     if __eza_yes "$EZA_SHOW_GROUP"
         set -a __eza_short_opts g
     else if test (string lower -- "$EZA_SHOW_GROUP") = smart

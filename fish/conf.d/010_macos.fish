@@ -5,9 +5,6 @@
 #   ofd              open dirs (or $PWD) in Finder
 #   showfiles        reveal hidden files in Finder
 #   hidefiles        hide hidden files in Finder
-#   tab              open $PWD in a new tab of the frontmost terminal
-#   vsplit_tab       split the frontmost terminal tab vertically, run a command
-#   split_tab        split the frontmost terminal tab horizontally, run a command
 #   pfd              print the Finder front window's directory
 #   pfs              print POSIX paths of the Finder selection, one per line
 #   cdf              cd into the Finder front window's directory
