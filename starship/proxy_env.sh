@@ -9,19 +9,17 @@ readonly STATE_HTTPS_PROXY=4    # bit 2: https_proxy is set
 
 # Check if a proxy environment variable is set (case-insensitive)
 is_proxy_set() {
-  local lower_var=$(echo $1 | tr '[:upper:]' '[:lower]')
-  local upper_var=$(echo $1 | tr '[:lower:]' '[:upper:]')
-  [[ -n "${!lower_var}" || -n "${!upper_var}" ]]
+  local lower="${1,,}"
+  local upper="${1^^}"
+  [[ -n "${!lower:-}" || -n "${!upper:-}" ]]
 }
 
 # Get proxy status as bitmask
 get_state() {
   local state=0
-
   is_proxy_set "all_proxy" && state=$((state | STATE_ALL_PROXY))
   is_proxy_set "http_proxy" && state=$((state | STATE_HTTP_PROXY))
   is_proxy_set "https_proxy" && state=$((state | STATE_HTTPS_PROXY))
-
   echo "$state"
 }
 
@@ -31,14 +29,10 @@ format_proxy_display() {
   local parts=()
 
   # No proxy configured
-  if ((state == 0)); then
-    return
-  fi
+  ((state == 0)) && return
 
   # Check for all_proxy
-  if ((state & STATE_ALL_PROXY)); then
-    parts+=("all")
-  fi
+  ((state & STATE_ALL_PROXY)) && parts+=("all")
 
   # Check for http/https proxies
   local has_http=$((state & STATE_HTTP_PROXY))
@@ -59,9 +53,7 @@ format_proxy_display() {
 
 # Main entry point
 get_result() {
-  local state
-  state=$(get_state)
-  format_proxy_display "$state"
+  format_proxy_display "$(get_state)"
 }
 
 # Command dispatcher
@@ -74,11 +66,12 @@ main() {
       get_result
       ;;
     *)
-      echo "Usage: $0 {state|result}" >&2
-      echo "" >&2
-      echo "Commands:" >&2
-      echo "  state   - Output numeric bitmask of proxy status" >&2
-      echo "  result  - Output human-readable proxy status (default)" >&2
+      printf '%s\n' \
+        "Usage: $0 {state|result}" \
+        "" \
+        "Commands:" \
+        "  state   - Output numeric bitmask of proxy status" \
+        "  result  - Output human-readable proxy status (default)" >&2
       exit 1
       ;;
   esac
