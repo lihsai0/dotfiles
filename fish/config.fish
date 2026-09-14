@@ -7,6 +7,8 @@ if status is-interactive
 
     alias fish_reload='exec fish'
     alias vim='nvim --clean'
+    abbr -a clipcopy 'fish_clipboard_copy'
+    abbr -a clippaste 'fish_clipboard_paste'
     abbr -a zrf 'zellij run --floating'
 
     # Zellij Setup when Alacritty or Ghostty
